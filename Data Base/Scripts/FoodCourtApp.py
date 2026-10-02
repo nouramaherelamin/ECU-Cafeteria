@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Food Court Management System - Documentation</title>
+    <style>
+        /* CSS resets and base styles */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e67e22;
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --light-text: #7f8c8d;
+            --border-color: #eef2f5;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: var(--card-bg);
+            padding: 40px 50px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+        header {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        header h1 {
+            color: var(--primary-color);
+            font-size: 32px;
+            margin-bottom: 5px;
+        }
+        header h2 {
+            color: var(--light-text);
+            font-size: 20px;
+            font-weight: 400;
+            margin-top: 0;
+        }
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-top: 40px;
+            font-size: 24px;
+        }
+        h3 {
+            color: var(--secondary-color);
+            margin-top: 25px;
+            font-size: 20px;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        ul, ol {
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        strong {
+            color: var(--primary-color);
+        }
+        code {
+            background-color: #f1f5f9;
+            color: #d35400;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: Consolas, Monaco, 'Andale Mono', monospace;
+            font-size: 0.9em;
+        }
+        /* Project Info & Team Section Styles */
+        .project-info-section {
+            background-color: #f9fbfe;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px 0;
+            border-left: 5px solid var(--primary-color);
+        }
+        .info-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .info-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            flex: 1;
+            min-width: 200px;
+            border-left: 4px solid var(--secondary-color);
+        }
+        .info-card.supervisors {
+            border-left-color: var(--accent-color);
+        }
+        .info-card h4 {
+            margin-top: 0;
+            color: var(--light-text);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        .info-card p, .info-card ul {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        .info-card ul {
+            padding-left: 20px;
+            font-weight: 500;
+        }
+        .info-card li {
+            margin-bottom: 4px;
+        }
+        .team-table-container {
+            overflow-x: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+        }
+        .team-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+        }
+        .team-table th, .team-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .team-table th {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            font-weight: 600;
+        }
+        .team-table tr {
+            transition: background-color 0.3s ease;
+        }
+        .team-table tbody tr:hover {
+            background-color: #f1f5f9;
+        }
+        .team-table td {
+            color: #555;
+        }
+        .team-table td:first-child {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>University Food Court Management System</h1>
+            <h2>Technical & Business Documentation</h2>
+        </header>
+
+        <div class="project-info-section">
+            <h2 style="margin-top: 0; border: none; padding: 0;">Project Information</h2>
+            <div class="info-cards">
+                <div class="info-card">
+                    <h4>Course Code</h4>
+                    <p>INF2201</p>
+                </div>
+                <div class="info-card supervisors">
+                    <h4>Supervisors</h4>
+                    <ul>
+                        <li>Dr. Sarah Naiem</li>
+                        <li>Dr. Doaa Mohey Eldin</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 0;">Team Members</h3>
+            <div class="team-table-container">
+                <table class="team-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Section</th>
+                            <th>ID</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Ahmed Mohamed Refaat</td><td>C2</td><td>692400154</td></tr>
+                        <tr><td>Fady Fouad Milad</td><td>C3</td><td>692400508</td></tr>
+                        <tr><td>Noura Maher Mohamed</td><td>C3</td><td>692400276</td></tr>
+                        <tr><td>Ebrahim Yussif Ebrahim</td><td>C4</td><td>692400174</td></tr>
+                        <tr><td>Ferial Mohamed Saad</td><td>C4</td><td>692400369</td></tr>
+                        <tr><td>Noha Mohamed Hamdi</td><td>C3</td><td>692400012</td></tr>
+                        <tr><td>Ahmed Yousry Tagelmoulok</td><td>C3</td><td>692400615</td></tr>
+                        <tr><td>Seif Eldin Mohamed</td><td>D1</td><td>692400535</td></tr>
+                        <tr><td>Ahmed Said Abdelhaseb</td><td>C4</td><td>692400495</td></tr>
+                        <tr><td>Mohammed Walid</td><td>A3</td><td>692400507</td></tr>
+                        <tr><td>Ali Fahmi Abolela</td><td>B1</td><td>692400782</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <h2>1. Project Overview</h2>
+        
+        <h3>Purpose of the System</h3>
+        <p>The <strong>University Food Court Management System</strong> is a robust, enterprise-grade relational database designed to manage the end-to-end operations of a dynamic university campus food court. It provides a centralized platform to handle vendors, diverse menus, dine-in table reservations, queue management, payments, and customer loyalty programs.</p>
+
+        <h3>Main Objectives</h3>
+        <ul>
+            <li><strong>Operational Efficiency:</strong> Automate order processing, queue tracking, and payment verification to reduce wait times.</li>
+            <li><strong>Customer Retention:</strong> Implement a loyalty points system to encourage repeat purchases among students, professors, and staff.</li>
+            <li><strong>Resource Management:</strong> Dynamically manage physical dining tables to ensure optimal seating capacity.</li>
+            <li><strong>Data Analytics:</strong> Provide comprehensive business intelligence through advanced SQL querying to track revenue, popular items, and vendor performance.</li>
+        </ul>
+
+        <h3>Features of the System</h3>
+        <ul>
+            <li><strong>Automated Queue Generation:</strong> Seamlessly generates queue numbers and estimates wait times based on preparation times of ordered items.</li>
+            <li><strong>Dynamic Table Tracking:</strong> Automatically updates table statuses (Available, Occupied) based on active dine-in orders.</li>
+            <li><strong>Integrated Loyalty Program:</strong> Automatically awards points upon payment and allows redemption for discounts.</li>
+            <li><strong>Robust Transaction Management:</strong> Ensures data consistency using Stored Procedures and Triggers for order creation, cancellation, and payment processing.</li>
+            <li><strong>Realistic Simulation & Analytics:</strong> Pre-populated with rich sample data (70 users, 9 real-world vendors, hundreds of menu items, and 150 simulated orders) and equipped with 15 advanced analytical queries.</li>
+        </ul>
+
+        <h2>2. Database Design</h2>
+        
+        <p>The database is highly normalized to ensure data integrity, eliminate redundancy, and support complex relationships.</p>
+        
+        <h3>Explanation of all Tables</h3>
+        <p>The system consists of 7 core tables: <code>Users</code>, <code>FoodVendors</code>, <code>MenuItems</code>, <code>FoodCourtTables</code>, <code>Orders</code>, <code>OrderDetails</code>, and <code>Payments</code>. They represent the core entities of a food service business.</p>
+
+        <h3>Relationships between Tables</h3>
+        <ul>
+            <li><strong>Users (1) to (M) Orders:</strong> A user can place multiple orders.</li>
+            <li><strong>FoodVendors (1) to (M) MenuItems:</strong> A vendor offers multiple menu items.</li>
+            <li><strong>MenuItems (1) to (M) OrderDetails:</strong> A menu item can appear in many order details.</li>
+            <li><strong>Orders (1) to (M) OrderDetails:</strong> An order consists of multiple line items (details).</li>
+            <li><strong>FoodCourtTables (1) to (M) Orders:</strong> A table can host multiple dine-in orders over time.</li>
+            <li><strong>Orders (1) to (1) Payments:</strong> Each order has one unique payment record.</li>
+        </ul>
+
+        <h3>Keys and Constraints</h3>
+        <ul>
+            <li><strong>Primary Keys (PK):</strong> Every table features an auto-incrementing <code>IDENTITY(1,1)</code> integer Primary Key (e.g., <code>UserID</code>, <code>VendorID</code>, <code>OrderID</code>).</li>
+            <li><strong>Foreign Keys (FK):</strong> Used extensively to enforce referential integrity (e.g., <code>VendorID</code> in <code>MenuItems</code> references <code>FoodVendors</code>). <code>ON DELETE CASCADE</code> is utilized for <code>OrderDetails</code> and <code>Payments</code> when an <code>Order</code> is deleted.</li>
+            <li><strong>Check Constraints:</strong> Used to validate domain rules:
+                <ul>
+                    <li>Positive values: <code>Price > 0</code>, <code>Quantity > 0</code>, <code>Amount >= 0</code>.</li>
+                    <li>Status restrictions: <code>Role IN ('Student', 'Professor', 'Staff')</code>, <code>OrderStatus IN ('Pending', 'Preparing', 'Ready', 'Completed', 'Cancelled')</code>.</li>
+                </ul>
+            </li>
+            <li><strong>Unique Constraints:</strong> Applied to <code>Email</code> in <code>Users</code>, <code>TableNumber</code> in <code>FoodCourtTables</code>, and <code>OrderID</code> in <code>Payments</code>.</li>
+        </ul>
+
+        <h3>ERD Explanation</h3>
+        <p>The Entity-Relationship Model centers around the <code>Orders</code> table. <code>Orders</code> bridges the <code>Users</code> (who places the order), the <code>FoodCourtTables</code> (where they sit), and the <code>Payments</code> (how they pay). The <code>Orders</code> table breaks down its composite items into <code>OrderDetails</code>, which directly link back to <code>MenuItems</code> and, by extension, <code>FoodVendors</code>. This star-like schema facilitates highly efficient querying and reporting.</p>
+
+        <h2>3. Tables Description</h2>
+
+        <h3>1. Users</h3>
+        <ul>
+            <li><strong>Purpose:</strong> Stores the profiles of all campus members interacting with the food court.</li>
+            <li><strong>Important Columns:</strong> <code>Role</code> (Student/Professor/Staff), <code>TotalPointsEarned</code>, <code>CurrentPointsBalance</code>.</li>
+            <li><strong>Data Types:</strong> <code>NVARCHAR</code> for strings, <code>INT</code> for points, <code>DATETIME</code> for timestamps.</li>
+            <li><strong>Relationships:</strong> PK <code>UserID</code>. Referenced by <code>Orders.UserID</code>.</li>
+        </ul>
+
+        <h3>2. FoodVendors</h3>
+        <ul>
+            <li><strong>Purpose:</strong> Catalogs the distinct food stalls and restaurants operating in the food court.</li>
+            <li><strong>Important Columns:</strong> <code>VendorName</code>, <code>Location</code>, <code>Status</code> (Active/Closed).</li>
+            <li><strong>Data Types:</strong> <code>NVARCHAR</code> for text.</li>
+            <li><strong>Relationships:</strong> PK <code>VendorID</code>. Referenced by <code>MenuItems.VendorID</code>.</li>
+        </ul>
+
+        <h3>3. MenuItems</h3>
+        <ul>
+            <li><strong>Purpose:</strong> Holds the complete menu for every vendor, including pricing and prep times.</li>
+            <li><strong>Important Columns:</strong> <code>ItemName</code>, <code>Category</code>, <code>Price</code>, <code>EstimatedPrepTime</code>.</li>
+            <li><strong>Data Types:</strong> <code>DECIMAL(10,2)</code> for financial values, <code>INT</code> for minutes.</li>
+            <li><strong>Relationships:</strong> PK <code>MenuID</code>, FK <code>VendorID</code>. Referenced by <code>OrderDetails.MenuID</code>.</li>
+        </ul>
+
+        <h3>4. FoodCourtTables</h3>
+        <ul>
+            <li><strong>Purpose:</strong> Manages the physical seating areas to assist with dine-in logistics.</li>
+            <li><strong>Important Columns:</strong> <code>TableNumber</code>, <code>AreaName</code>, <code>Capacity</code>, <code>Status</code>.</li>
+            <li><strong>Data Types:</strong> <code>INT</code> for capacity, <code>NVARCHAR</code> for identifiers.</li>
+            <li><strong>Relationships:</strong> PK <code>TableID</code>. Referenced by <code>Orders.TableID</code>.</li>
+        </ul>
+
+        <h3>5. Orders</h3>
+        <ul>
+            <li><strong>Purpose:</strong> The transactional hub of the system tracking the lifecycle of an order.</li>
+            <li><strong>Important Columns:</strong> <code>OrderType</code> (Dine-in/Takeaway/Campus Delivery), <code>OrderStatus</code>, <code>QueueNumber</code>, <code>EstimatedWaitingTime</code>, <code>TotalAmount</code>.</li>
+            <li><strong>Data Types:</strong> <code>DATETIME</code> for order time, <code>DECIMAL(10,2)</code> for totals.</li>
+            <li><strong>Relationships:</strong> PK <code>OrderID</code>, FK <code>UserID</code>, FK <code>TableID</code>.</li>
+        </ul>
+
+        <h3>6. OrderDetails</h3>
+        <ul>
+            <li><strong>Purpose:</strong> Represents the specific line items (food and drink) for a given order.</li>
+            <li><strong>Important Columns:</strong> <code>Quantity</code>, <code>UnitPrice</code>, <code>SubTotal</code>.</li>
+            <li><strong>Data Types:</strong> <code>INT</code> for quantities, <code>DECIMAL(10,2)</code> for currency.</li>
+            <li><strong>Relationships:</strong> PK <code>OrderDetailID</code>, FK <code>OrderID</code>, FK <code>MenuID</code>.</li>
+        </ul>
+
+        <h3>7. Payments</h3>
+        <ul>
+            <li><strong>Purpose:</strong> Records the financial settlement of an order.</li>
+            <li><strong>Important Columns:</strong> <code>PaymentMethod</code> (Cash/Card/Points), <code>Amount</code>, <code>PaymentStatus</code>.</li>
+            <li><strong>Data Types:</strong> <code>DECIMAL(10,2)</code> for amounts.</li>
+            <li><strong>Relationships:</strong> PK <code>PaymentID</code>, FK <code>OrderID</code> (UNIQUE).</li>
+        </ul>
+
+        <h2>4. Triggers Documentation</h2>
+        <p>Triggers handle the automated business rules, shifting the processing burden from the application layer to the database engine.</p>
+
+        <h3>1. trg_UpdateTableStatus_OnOrder</h3>
+        <ul>
+            <li><strong>Purpose:</strong> Automates table reservations.</li>
+            <li><strong>When it executes:</strong> <code>AFTER INSERT</code> on <code>Orders</code>.</li>
+            <li><strong>Logic:</strong> If an order is 'Dine-in' and has a <code>TableID</code>, it marks the corresponding table as 'Occupied'.</li>
+            <li><strong>Example:</strong> A student places a dine-in order and selects Table MH-01. The table instantly becomes unavailable to others.</li>
+        </ul>
+
+        <h3>2. trg_UpdateTableStatus_OnOrderComplete</h3>
+        <ul>
+            <li><strong>Purpose:</strong> Frees up tables automatically.</li>
+            <li><strong>When it executes:</strong> <code>AFTER UPDATE</code> on <code>Orders</code>.</li>
+            <li><strong>Logic:</strong> Checks if the <code>QueueStatus</code> or <code>OrderStatus</code> changes to 'Completed' or 'Cancelled'. If so, it reverts the linked table's status back to 'Available'.</li>
+            <li><strong>Example:</strong> Once the student finishes their meal and the order is marked 'Completed', Table MH-01 is free for the next group.</li>
+        </ul>
+
+        <h3>3. trg_CalculateTotalsAndWaitTime</h3>
+        <ul>
+            <li><strong>Purpose:</strong> Maintains accurate real-time financial and logistical totals.</li>
+            <li><strong>When it executes:</strong> <code>AFTER INSERT, UPDATE, DELETE</code> on <code>OrderDetails</code>.</li>
+            <li><strong>Logic:</strong> First calculates <code>SubTotal</code> (<code>Quantity * UnitPrice</code>) for the line item. Then, it aggregates all sub-totals and updates <code>TotalAmount</code> in the <code>Orders</code> table. It also sums the <code>EstimatedPrepTime</code> from the menu items and updates <code>EstimatedWaitingTime</code>.</li>
+            <li><strong>Example:</strong> Adding a pizza (15 mins, 100 LE) and a drink (5 mins, 20 LE) updates the order total to 120 LE and wait time to 20 mins.</li>
+        </ul>
+
+        <h3>4. trg_PreventInvalidData</h3>
+        <ul>
+            <li><strong>Purpose:</strong> Failsafe data validation.</li>
+            <li><strong>When it executes:</strong> <code>AFTER INSERT, UPDATE</code> on <code>OrderDetails</code>.</li>
+            <li><strong>Logic:</strong> Throws a fatal error and rolls back the transaction if a negative quantity or unit price is inserted.</li>
+        </ul>
+
+        <h3>5. trg_GenerateQueueNumber</h3>
+        <ul>
+            <li><strong>Purpose:</strong> Creates readable queue tickets for customers.</li>
+            <li><strong>When it executes:</strong> <code>AFTER INSERT</code> on <code>Orders</code>.</li>
+            <li><strong>Logic:</strong> Takes the newly generated <code>OrderID</code> and formats it into a 3-digit string prefixed with 'Q' (e.g., Order 12 becomes 'Q012').</li>
+            <li><strong>Example:</strong> Useful for the digital display boards in the food court.</li>
+        </ul>
+
+        <h3>6. trg_ProcessPaymentEffects</h3>
+        <ul>
+            <li><strong>Purpose:</strong> Triggers the kitchen workflow and loyalty rewards upon payment.</li>
+            <li><strong>When it executes:</strong> <code>AFTER INSERT, UPDATE</code> on <code>Payments</code>.</li>
+            <li><strong>Logic:</strong> If payment is 'Completed', the order's queue status shifts from 'Waiting' to 'Preparing'. It also calculates loyalty points (1 point per 10 LE spent) and updates the User's point balance.</li>
+        </ul>
+
+        <h2>5. Stored Procedures Documentation</h2>
+        <p>Stored Procedures encapsulate complex business workflows into secure, reusable modules.</p>
+
+        <h3>1. sp_ProcessFoodCourtOrder</h3>
+        <ul>
+            <li><strong>Workflow:</strong> Begins a transaction, inserts a master record into <code>Orders</code>, looks up current prices for up to 3 requested Menu Items, and inserts them into <code>OrderDetails</code>.</li>
+            <li><strong>Parameters:</strong> <code>@UserID</code>, <code>@TableID</code>, <code>@OrderType</code>, and up to 3 sets of (<code>@MenuID</code>, <code>@Qty</code>). Returns <code>@NewOrderID</code> via <code>OUTPUT</code>.</li>
+            <li><strong>Validation:</strong> Checks if items are currently 'Available'. Rolls back entirely if an item is missing.</li>
+        </ul>
+
+        <h3>2. sp_CampusDeliveryOrder</h3>
+        <ul>
+            <li><strong>Workflow:</strong> A shorthand wrapper for <code>sp_ProcessFoodCourtOrder</code> that forces <code>@OrderType</code> to 'Campus Delivery' and nullifies the <code>@TableID</code>.</li>
+        </ul>
+
+        <h3>3. sp_CompletePayment</h3>
+        <ul>
+            <li><strong>Workflow:</strong> Wraps payment logic in a transaction. Retrieves the final <code>TotalAmount</code> from the <code>Orders</code> table and inserts a new row into <code>Payments</code> with 'Completed' status.</li>
+            <li><strong>Validation:</strong> Ensures the order exists. Prevents double payments by checking if a payment record already exists.</li>
+        </ul>
+
+        <h3>4. sp_UpdateQueueStatus</h3>
+        <ul>
+            <li><strong>Workflow:</strong> Updates both <code>QueueStatus</code> and <code>OrderStatus</code> concurrently to ensure they remain synchronized.</li>
+        </ul>
+
+        <h3>5. sp_RedeemLoyaltyPoints</h3>
+        <ul>
+            <li><strong>Workflow:</strong> Deducts points from the user's account and applies a 1:1 monetary discount to the order's <code>TotalAmount</code>.</li>
+            <li><strong>Validation:</strong> Verifies the user has sufficient points before allowing the transaction.</li>
+        </ul>
+
+        <h3>6. sp_CancelOrder</h3>
+        <ul>
+            <li><strong>Workflow:</strong> Modifies both the <code>OrderStatus</code> and <code>QueueStatus</code> to 'Cancelled'. This subsequent update fires the table-freeing trigger.</li>
+        </ul>
+
+        <h2>6. Business Logic</h2>
+        <ul>
+            <li><strong>Queue System:</strong> Customers enter the queue as 'Waiting'. Once payment clears, the system automatically elevates them to 'Preparing'. Staff then manually update it to 'Ready' and finally 'Completed'. The auto-generated queue number acts as the primary customer-facing identifier.</li>
+            <li><strong>Table Reservation Logic:</strong> The system mirrors the real-world flow. A table is locked (<code>Occupied</code>) the moment a dine-in order is initiated. It remains locked until the customer finishes and the order is marked <code>Completed</code>, preventing double-booking.</li>
+            <li><strong>Loyalty Points System:</strong> Encourages ecosystem retention. Customers earn 10% back in points (1 point for every 10 currency units). Points act as a digital wallet that can be redeemed to subsidize future orders.</li>
+            <li><strong>Payment Workflow:</strong> Decoupled from order creation. An order sits in a 'Pending' financial state until <code>sp_CompletePayment</code> or <code>sp_RedeemLoyaltyPoints</code> is executed.</li>
+            <li><strong>Order Processing Workflow:</strong> <code>Order</code> -> <code>Order Details</code> -> (Triggers calculate Totals/Wait times) -> <code>Payment</code> -> (Triggers move to Preparing/Award Points).</li>
+        </ul>
+
+        <h2>7. Advanced Features</h2>
+        <ul>
+            <li><strong>Automatic Calculations:</strong> The database self-maintains financial aggregates. The application layer never manually updates <code>TotalAmount</code>; it relies entirely on <code>trg_CalculateTotalsAndWaitTime</code>.</li>
+            <li><strong>Trigger Automation:</strong> Business logic cascades naturally. A payment insert automatically affects the order queue and the user's loyalty profile.</li>
+            <li><strong>Queue Number Generation:</strong> Guarantees uniform, collision-free tracking numbers without application-side string manipulation.</li>
+            <li><strong>Error Prevention:</strong> <code>TRY...CATCH</code> blocks inside stored procedures handle exceptions gracefully. Check constraints and validation triggers block bad data at the schema level.</li>
+            <li><strong>Cascading Deletes:</strong> Deleting an <code>Order</code> automatically scrubs its associated <code>OrderDetails</code> and <code>Payments</code>, preventing orphan records.</li>
+            <li><strong>Transactions:</strong> Explicit <code>BEGIN TRANSACTION</code> and <code>COMMIT/ROLLBACK</code> guarantees atomicity. An order will never exist without its corresponding details if a mid-process failure occurs.</li>
+        </ul>
+
+        <h2>8. Sample Data Explanation</h2>
+        <p>The database comes fully seeded with highly realistic, robust sample data.</p>
+        <ul>
+            <li><strong>Users:</strong> 70 varied profiles (40 Students, 15 Professors, 15 Staff members), providing a realistic demographic mix.</li>
+            <li><strong>Vendors:</strong> 9 distinct food vendors. Includes realistic campus entities like "The Breakfast Bus", "Pasta Express", and newly integrated extensive menus for "Pablo", "Bites", and "Food Friends".</li>
+            <li><strong>Menus:</strong>
+                <ul>
+                    <li><strong>Pablo:</strong> Features pizzas, sandwiches, pastas, crepes, and waffles with different sizes and dynamic pricing.</li>
+                    <li><strong>Bites:</strong> A comprehensive cafe menu featuring diverse iced coffees, milkshakes, smoothies, bakery items, and savory sandwiches.</li>
+                    <li><strong>Santa Cafe:</strong> Focuses heavily on frappes, fresh juices, hot drinks, and customized croissants.</li>
+                </ul>
+            </li>
+            <li><strong>Sample Orders and Payments:</strong> A complex T-SQL <code>WHILE</code> loop was utilized to simulate <strong>150 unique, randomized orders</strong>. The simulation randomly pairs users, vendors, items, and tables, processes payments (with a 90% completion rate and 10% cancellation rate), randomly allocates queue statuses, and simulates a 15% probability of loyalty point redemption.</li>
+        </ul>
+
+        <h2>9. SQL Queries Analysis</h2>
+        <p>The system includes 15 advanced, business-intelligence queries to extract immediate value from the transactional data:</p>
+        <ol>
+            <li><strong>Revenue Calculation (Most Profitable Vendor):</strong> Aggregates sub-totals across completed orders to rank vendors by financial performance.</li>
+            <li><strong>Overall Order Statistics:</strong> Calculates grand total revenue, average order value, and successful completion counts.</li>
+            <li><strong>Top Busiest Ordering Hours:</strong> Uses <code>DATEPART</code> to analyze order timestamps and identify peak operational hours.</li>
+            <li><strong>Top Categories by Items Sold:</strong> Groups by menu category to determine whether 'Pizza', 'Hot Drinks', or 'Sandwiches' are the highest volume drivers.</li>
+            <li><strong>Most Loyal Customers:</strong> Identifies power-users based on their earned points.</li>
+            <li><strong>Orders by Type/Role:</strong> Evaluates whether Students or Staff contribute more to the bottom line.</li>
+            <li><strong>Vendor Performance Ranking:</strong> Utilizes Window Functions (<code>RANK() OVER</code>) to definitively rank vendors by revenue.</li>
+            <li><strong>Wait Time Analysis:</strong> Calculates the average and maximum estimated wait times per vendor to identify bottlenecks.</li>
+            <li><strong>Cancellation Analysis:</strong> Identifies lost revenue and calculates the exact percentage of orders that get cancelled.</li>
+            <li><strong>Payment Methods:</strong> Aggregates transaction volumes by Cash, Card, and Online payments.</li>
+            <li><strong>Daily Revenue:</strong> Groups payments by date to isolate the top 10 most profitable days.</li>
+            <li><strong>Vendor Pricing vs Volume:</strong> Compares the average item price of a vendor against their total sales volume.</li>
+            <li><strong>Live Queue Dashboard:</strong> A real-time <code>JOIN</code> query simulating a digital display board, showing current waiting/preparing orders.</li>
+            <li><strong>Top Expensive/Ordered Items:</strong> Ranks the specific menu items that are absolute best-sellers across the entire food court.</li>
+            <li><strong>Table Utilization:</strong> Assesses which tables/zones are most frequently occupied to optimize floor space.</li>
+        </ol>
+
+        <h2>10. Testing and Validation</h2>
+        <ul>
+            <li><strong>How the system was tested:</strong> A rigorous 150-order simulation script (<code>SECTION 6</code> in the SQL file) acts as a stress test. It programmatically navigates the entire order lifecycle, intentionally generating edge cases (like cancelled orders and randomized multi-item orders).</li>
+            <li><strong>Example Test Cases:</strong>
+                <ul>
+                    <li><em>Concurrency/Data Integrity:</em> Placing an order with 3 items simultaneously.</li>
+                    <li><em>Trigger Validation:</em> Completing a payment to verify if the queue status automatically shifts to 'Preparing' and points are awarded.</li>
+                    <li><em>Constraint Checking:</em> Attempting to book a 'Dine-in' order without a table or attempting to charge negative amounts.</li>
+                </ul>
+            </li>
+            <li><strong>Expected Outputs:</strong>
+                <ul>
+                    <li>The <code>TotalAmount</code> always perfectly matches the sum of <code>OrderDetails</code>.</li>
+                    <li>Tables are never double-booked.</li>
+                    <li>Loyalty points are accurately mathematically tied to the completed <code>Payments</code> table.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>11. Conclusion</h2>
+        
+        <h3>Final System Summary</h3>
+        <p>The University Food Court Management System is a highly automated, self-regulating database solution. By leveraging advanced T-SQL features like Triggers, Stored Procedures, and complex relational constraints, it abstracts complex business logic into the data layer itself.</p>
+
+        <h3>Benefits of the System</h3>
+        <ul>
+            <li><strong>Data Accuracy:</strong> Automated calculations completely eliminate human math errors in pricing and wait times.</li>
+            <li><strong>Seamless Operations:</strong> Staff only need to interact with simple stored procedures to move orders through the pipeline.</li>
+            <li><strong>Actionable Insights:</strong> The comprehensive query suite allows university administration to make immediate, data-driven decisions regarding vendor leases, menu changes, and staffing during peak hours.</li>
+        </ul>
+
+        <h3>Future Improvements</h3>
+        <ul>
+            <li><strong>Inventory Management:</strong> Expanding the schema to track raw ingredients and map them to <code>MenuItems</code> for automated stock depletion.</li>
+            <li><strong>Notification System:</strong> Integrating a secondary table for push-notifications to alert users via SMS/Email when their order status hits 'Ready'.</li>
+            <li><strong>Vendor Authentication:</strong> Adding a vendor portal layer so individual vendors can toggle item <code>IsAvailable</code> statuses in real-time.</li>
+        </ul>
+    </div>
+</body>
+</html>
