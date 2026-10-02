@@ -438,13 +438,6 @@ The project was developed by **Team Masterpiece** at the Egyptian Chinese Univer
 - 🔄 Triggers
 - 📚 Project Documentation
 - 📈 Business Analysis
-
-**Not included in my contribution:**
-
-- ❌ Web Application Development
-- ❌ Frontend Development
-- ❌ Backend Development
-
 ---
 
 ## 🎓 Academic Project
